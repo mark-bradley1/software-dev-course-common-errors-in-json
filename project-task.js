@@ -44,31 +44,29 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+// Removed the variable
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15", // Added comma
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", // Added quotes to name
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null, // changed undefined to null
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"] // Removed comma after parking
   }
-}
-`;
-
+} // removed the back tics and the semicolon
 
 // ============================================
 // ✅ Requirements
@@ -91,11 +89,13 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
-
+I used the information I learned in the lesson to determine what the syntax errors were. I also used VS Code to help spot errors.
+I also copied the code into a JSON file in VS Code to make it easier to spot errors. 
 2️⃣ How did you confirm that your corrected JSON file was valid?
-
+I used jsonlint to verify the code was valid
 3️⃣ Which errors were the most difficult to spot? Why?
-
+The commas were the hardest to spot. They are sometimes in spots that may make since normally but not in JSON
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+   Syntax highlighting is very helpful to me. 
 */
